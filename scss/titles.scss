@@ -1,18 +1,14 @@
 .title {
-  align-items: center;
-  display: flex;
   font-size: $text-big;
-  height: $title-decoration-height;
-  left: 100px;
+  margin: 50px;
   position: relative;
-  width: 100%;
   &::before {
-    background-image: url('assets/triangle.svg');
-    background-repeat: no-repeat;
+    background: url('./assets/triangle.svg') no-repeat;
     content: '';
-    height: 100%;
-    position: absolute;
+    height: $title-decoration-height;
     left: -50px;
+    position: absolute;
+    top: -25px;
     width: $title-decoration-width;
     z-index: -1;
   }
