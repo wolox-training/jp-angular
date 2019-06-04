@@ -1,20 +1,19 @@
 .title {
-  height: $title-decoration-height;
-  font-size: $text-big;
-  width: 100%;
-  display: flex;
   align-items: center;
-  padding-left: $title-pading-left;
+  display: flex;
+  font-size: $text-big;
+  height: $title-decoration-height;
+  padding-left: 50px;
   position: relative;
-    &::before {
-      background-image: url('assets/triangle.svg');
-      background-repeat: no-repeat;
-      content: '';
-      width: $title-decoration-width;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      z-index: -1;
-    }
+  width: 100%;
+  &::before {
+    background-image: url('assets/triangle.svg');
+    background-repeat: no-repeat;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: $title-decoration-width;
+    z-index: -1;
+  }
 }
-
