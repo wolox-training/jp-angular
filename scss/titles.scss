@@ -3,7 +3,7 @@
   display: flex;
   font-size: $text-big;
   height: $title-decoration-height;
-  padding-left: 50px;
+  left: 100px;
   position: relative;
   width: 100%;
   &::before {
@@ -11,8 +11,8 @@
     background-repeat: no-repeat;
     content: '';
     height: 100%;
-    left: 0;
     position: absolute;
+    left: -50px;
     width: $title-decoration-width;
     z-index: -1;
   }
