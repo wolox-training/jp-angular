@@ -1,7 +1,19 @@
-
-.ttl-frontend-tools {
-  background-image: url(images/front-end-tools.png);
-  width: 500px;
-  height: 210px;
+.title {
+  height: $title-decoration-height;
+  font-size: $text-big;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: $title-pading-left;
+  position: relative;
+    &::before {
+      background-image: url('assets/triangle.svg');
+      background-repeat: no-repeat;
+      content: '';
+      width: $title-decoration-width;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
 }
-
