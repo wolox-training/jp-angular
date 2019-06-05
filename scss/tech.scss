@@ -1,0 +1,38 @@
+.tech-item {
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  position: relative;
+  width: $tech-element-width;
+  &::before  {
+    border: 2px solid $green;
+    border-radius: 5px;
+    content: '';
+    height: 315px;
+    left: -10px;
+    position: absolute;
+    top: -10px;
+    width: $tech-element-width;
+    z-index: -1;
+  }
+}
+.tech-desc {
+  margin: 0 20px 40px 20px;
+  text-align: center;
+}
+.tech-img {
+  height: $tech-logo-size;
+  margin: 20px;
+  width: $tech-logo-size;
+}
+.tech-release {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.tech-title {
+  font-size: $text-medium;
+  margin-bottom: 20px;
+}
