@@ -4,7 +4,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  height: 320px;
+  height: $tech-element-heigth;
   margin: 20px;
   position: relative;
   width: $tech-element-width;
@@ -12,7 +12,7 @@
     border: 2px solid $green;
     border-radius: 5px;
     content: '';
-    height: 320px;
+    height: $tech-element-heigth;
     left: -10px;
     position: absolute;
     top: -10px;
