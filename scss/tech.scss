@@ -4,6 +4,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  height: $tech-element-height;
   margin: 20px;
   position: relative;
   width: $tech-element-width;
@@ -11,7 +12,7 @@
     border: 2px solid $green;
     border-radius: 5px;
     content: '';
-    height: 315px;
+    height: $tech-element-height;
     left: -10px;
     position: absolute;
     top: -10px;
@@ -20,8 +21,10 @@
   }
 }
 .tech-desc {
-  margin: 0 20px 40px 20px;
+  font-size: $text-small;
+  padding: 0 10px;
   text-align: center;
+
 }
 .tech-img {
   height: $tech-logo-size;
@@ -35,4 +38,16 @@
 .tech-title {
   font-size: $text-medium;
   margin-bottom: 20px;
+}
+.tech-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 40px;
+}
+.tech-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto; 
+  max-width: 1000px; 
+  width: 100%;
 }
