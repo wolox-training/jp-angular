@@ -16,8 +16,14 @@
     left: -10px;
     position: absolute;
     top: -10px;
+    transition: left 0.5s ease;
+    transition: top 0.5s ease;
     width: $tech-element-width;
     z-index: -1;
+  }
+  &:hover::before {
+    left: 10px;
+    top: 10px;
   }
 }
 .tech-desc {
