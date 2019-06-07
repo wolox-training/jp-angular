@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 .footer-title {
-  color: white;
+  color: $white;
   font-size: $text-medium;
   padding: 20px;
   text-align: center;
@@ -15,7 +15,7 @@
 }
 .footer-copyright {
   align-self: flex-end;
-  color: white;
+  color: $white;
   font-size: $text-small;
   padding: 20px 20px;
   text-align: right;

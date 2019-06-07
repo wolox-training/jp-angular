@@ -1,3 +1,20 @@
 .nav-logo {
+  height: $nav-logo-height;
+}
+.nav {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 5px 7px 5px 0px $grey;
+  display: flex;
+  flex-wrap: wrap;
   height: $nav-height;
+  justify-content: space-between;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.nav-title {
+  font-size: $text-big;
 }
