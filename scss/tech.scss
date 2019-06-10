@@ -1,28 +1,20 @@
 .tech-item {
   align-items: center;
-  background-color: $green;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   height: $tech-element-height;
+  justify-items: center;
   margin: 20px;
+  padding: 20px 30px;
   position: relative;
   width: $tech-element-width;
-  &::before  {
-    border: 2px solid $green;
-    border-radius: 5px;
-    content: '';
-    height: $tech-element-height;
-    left: -10px;
-    position: absolute;
-    top: -10px;
-    transition: left $time-transition, top $time-transition;
-    width: $tech-element-width;
-    z-index: -1;
-  }
-  &:hover::before {
-    left: 10px;
-    top: 10px;
+  &:first-child {
+    border-right: 1px solid $green;
+    grid-row: 1 / 3;
+    height: 100%;
+    justify-content: center;
+    justify-self: flex-end;
   }
 }
 .tech-desc {
@@ -46,8 +38,9 @@
 }
 .tech-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 20px;
 }
 .tech-layout {
   display: flex;
