@@ -51,7 +51,6 @@
 @media  only screen and (max-width: $max-breakpoint){
   .tech-gallery {
     grid-template-columns: 100%;
-    padding: 10px;
   }
   .tech-item {
     border-bottom: 1px solid $green;
@@ -62,9 +61,8 @@
       border-right: none;
       grid-column: 1/1;
       grid-row: 1/1;
-      height: auto;
       justify-self: center;
-      padding: 0;
+      padding: 10px 0;
     }
     &:nth-last-child(1){
       border: none;
