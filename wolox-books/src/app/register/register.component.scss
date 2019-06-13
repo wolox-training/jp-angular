@@ -1,12 +1,72 @@
+@import '~src/styles/colors';
+
 .container {
+  align-items: center;
+  background-color: $light-gray;
+  border-top: 5px solid $blue;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 140px auto;
   max-width: 350px;
+  padding: 40px 20px 15px;
   width: 100%;
 }
 
 .form-signup {
-  max-width: 300px;
+  border-bottom: 2px solid $dark-gray;
+  display: flex; 
+  flex-direction: column;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 8px;
+  margin-bottom: 40px;
+  margin-left: -8px;
+}
+
+.logo {
+  align-self: center;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.inputForm {
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 9px;
+}
+
+.labelform {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+.btn-signup {
+  background-color: $green;
+  color: $white;
+  margin-bottom: 10px;
+  padding: 12px;
+}
+
+.inputFormLogin {
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 8px;
+  width: 100%;
+}
+
+.btn-login {
+  border: 2px solid $green;
+  color: $green;
+  margin-top: 12px;
+  padding: 10px;
+  width: 99%;
 }
