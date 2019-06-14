@@ -1,0 +1,19 @@
+.btn {
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: $green;
+  color: $white;
+  margin-bottom: 18px;
+  padding: 12px;
+}
+
+.btn-secundary {
+  border: 2px solid $green;
+  color: $green;
+  margin-bottom: 10px;
+  margin-top: 18px;
+  padding: 10px;
+  width: 99%;
+}

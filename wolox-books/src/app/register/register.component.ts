@@ -12,13 +12,9 @@ export class RegisterComponent implements OnInit {
   imagenLogo: any = '../assets/wolox_logo.svg';
   nForm: FormGroup;
   post: any;
-  firstName: string = '';
-  lastName: string = '';
-  email: string = '';
-  password: string = '';
   locale: string = 'en';
 
-  constructor(fb: FormBuilder) { 
+  constructor(fb: FormBuilder) {
 
     this.nForm = fb.group({
       firstName: [null, Validators.required],
