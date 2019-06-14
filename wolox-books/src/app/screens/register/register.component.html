@@ -1,17 +1,18 @@
 <div class="container">
-  <div class="form-signup">
-    <img [src]="imagenLogo"/>
-    <h2>Books</h2>
-    <p>First name</p>
-    <input type="text" />
-    <p>Last name</p>
-    <input type="text" />
-    <p>Email</p>
-    <input type="email" />
-    <p>Password</p>
-    <input type="password" />
-
-    <input type="submit" value="Sign up" />
-    <input type="submit" value="Login" />
-    </div>
+    <img class="logo" [src]="imagenLogo"  alt="Logo Wolox"/>
+    <h1 class="title">books</h1>
+  <form class="form-signup" [formGroup]="nForm" (ngSubmit)="addregister(nForm.value)">
+    <label class="labelform" for="firstNameInput">First name</label>
+    <input class="inputForm" type="text" id="firstNameInput" formControlName="firstName" />
+    <label class="labelform" for="lastNameInput">Last name</label>
+    <input class="inputForm" type="text" id="lastNameInput" formControlName="lastName" />
+    <label class="labelform" for="emailInput">Email</label>
+    <input class="inputForm" type="email" id="emailInput"  formControlName="email" />
+    <label class="labelform" for="passworInput">Password</label>
+    <input class="inputForm" type="password" id="passworInput" formControlName="password" />
+    <button class="btn btn-primary" type="submit" [disabled]="!nForm.valid">Sign up</button>
+</form>
+<div class="inputFormLogin">  
+    <button class="btn btn-secundary" type="submit">Login</button>
+</div>
 </div>
