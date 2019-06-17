@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     .subscribe(result => {
       console.log(result.access_token);
       this.authLocalSorage.setValue('token',result.access_token);
-      this.router.navigateByUrl('/auth');
+      this.router.navigateByUrl('books');
     },
       error => console.log('error', error));
   }

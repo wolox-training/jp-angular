@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {IUser} from '../../models/user';
-import { isBuffer } from 'util';
+import {IUser} from '../../../models/user';
 import { UserServiceService } from 'src/app/services/user-service.service';
-import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-register',

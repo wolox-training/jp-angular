@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IUser } from '../models/user';
 import { ISession } from '../models/session.model';
 import { IRenew } from '../models/renew.model';
+import { LocalStorageService } from './local-storage.service';
 
 //import {  } from '../models/book.model';
 // colocar el modelo arriba
@@ -16,7 +17,7 @@ export class UserServiceService {
   routeUser = 'users/';
   routeLogin = 'sessions';
   response: Observable<any>;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
 
   }
 
@@ -30,5 +31,12 @@ export class UserServiceService {
 
   login(session: ISession) {
     return this.http.post<IRenew>(this.URL_API + this.routeUser + this.routeLogin, session);
+  }
+
+  getToken() {
+    return this.localStorageService.getValue('token');
+  }
+  isLogged(): boolean {
+    return !!this.getToken();
   }
 }
