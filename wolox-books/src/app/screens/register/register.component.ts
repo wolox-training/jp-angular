@@ -32,16 +32,19 @@ export class RegisterComponent implements OnInit {
     const user: IUser = {
       user :
       {
-      firstName : post.firstName,
-      lastName : post.lastName,
+      first_name : post.firstName,
+      last_name : post.lastName,
       email : post.email,
       password : post.password,
       password_confirmation : post.password,
       locale : this.locale
       }
     };
-    this.userService.createUser(user);
-    //console.log(JSON.stringify(user));
+    console.log(JSON.stringify(user));
+    this.userService.createUser(user)
+    .subscribe(result => 
+      console.log('sucess'),
+    error => console.log('error', error));
   }
 
 }
