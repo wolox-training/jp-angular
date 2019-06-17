@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <img class="logo" [src]="imagenLogo"  alt="Logo Wolox"/>
+  <h1 class="title">books</h1>
+<form class="form-signup" [formGroup]="lForm" (ngSubmit)="login(lForm.value)">
+  <label class="labelform" for="emailInput">Email</label>
+  <input class="inputForm" type="email" id="emailInput"  formControlName="email" />
+  <label class="labelform" for="passworInput">Password</label>
+  <input class="inputForm" type="password" id="passworInput" formControlName="password" />
+  <button class="btn btn-primary" type="submit" [disabled]="!lForm.valid">Login</button>
+</form>
+<div class="inputFormLogin">  
+  <button class="btn btn-secundary" routerLink='/sign-up' type="submit">Sign up</button>
+</div>
+</div>
