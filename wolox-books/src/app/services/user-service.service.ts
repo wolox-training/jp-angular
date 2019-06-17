@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+import { IUser } from '../models/user';
 
 //import {  } from '../models/book.model';
 // colocar el modelo arriba
@@ -10,7 +10,8 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class UserServiceService {
-  readonly URL_API = 'https://wbooks-api-stage.herokuapp.com/api/v1';
+  readonly URL_API = 'https://wbooks-api-stage.herokuapp.com/api/v1/';
+  routeUser = 'users';
   response: Observable<any>;
   constructor(private http: HttpClient) {
 
@@ -20,12 +21,7 @@ export class UserServiceService {
     this.response = this.http.get(this.URL_API);
   }
 
-  createUser(user:Iuser){
-    this.response = this.http.post(this.URL_API + '', user)
-    .subscribe(response => {
-      console.log(response.status);
-    });
-    
-    console.log(this.response);
+  createUser(user:IUser):Observable <any> {
+    return this.response = this.http.post(this.URL_API + this.routeUser, user);
   }
 }
