@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IUser} from '../../models/user';
 import { isBuffer } from 'util';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,10 @@ export class RegisterComponent implements OnInit {
   post: any;
   locale = 'en';
 
-  constructor(fb: FormBuilder, private userService: UserServiceService) {
+  constructor(fb: FormBuilder, 
+    private userService: UserServiceService,
+    private router: Router
+    ) {
 
     this.nForm = fb.group({
       firstName: [null, Validators.required],
@@ -26,6 +31,10 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goLogin (){
+    this.router.navigateByUrl('/login');
   }
 
   addregister(post) {
@@ -42,9 +51,10 @@ export class RegisterComponent implements OnInit {
     };
     console.log(JSON.stringify(user));
     this.userService.createUser(user)
-    .subscribe(result => 
-      console.log('sucess'),
+    .subscribe(result =>
+      console.log('sucess')
+      ,
     error => console.log('error', error));
+    this.goLogin();
   }
-
 }
