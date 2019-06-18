@@ -12,8 +12,7 @@ export class AuthComponent implements OnInit {
   imagenLogo: any = '../../../assets/wolox_logo.svg';
   constructor(private authLocalSorage: LocalStorageService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   logout() {
     this.authLocalSorage.removeValue('token');
