@@ -8,14 +8,14 @@ import { Book } from 'src/app/models/book.model';
   styleUrls: ['./booklist.component.scss']
 })
 export class BooklistComponent implements OnInit {
-  books: Book[] = [];
+  books: Book;
   constructor(private bookService: BookServiceService) { }
 
   ngOnInit() {
     console.log('consultando books');
     this.bookService.getBooks()
     .subscribe(result => {
-      console.log('exito', result);
+      this.books = result;
     }, error => console.log('error', error));
   }
 
