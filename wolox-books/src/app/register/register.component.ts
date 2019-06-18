@@ -11,8 +11,7 @@ import { isBuffer } from 'util';
 export class RegisterComponent implements OnInit {
   imagenLogo: any = '../assets/wolox_logo.svg';
   nForm: FormGroup;
-  post: any;
-  locale: string = 'en';
+  locale: 'en';
 
   constructor(fb: FormBuilder) {
 
