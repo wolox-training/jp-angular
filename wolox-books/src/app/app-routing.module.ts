@@ -6,6 +6,7 @@ import { AuthComponent } from './screens/auth/auth.component';
 import { BooklistComponent } from './screens/auth/booklist/booklist.component';
 import { AuthGuardGuard } from './guard/auth-guard.guard';
 import { UnauthGuardGuard } from './guard/unauth-guard.guard';
+import { BookdetailComponent } from './screens/auth/bookdetail/bookdetail.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     children: [{
       path : '',
       component : BooklistComponent
+    },
+    {
+      path : ':id',
+      component : BookdetailComponent
     }
     ]
   }

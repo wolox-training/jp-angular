@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Book } from '../models/book.model';
 
 @Injectable({
@@ -12,5 +12,11 @@ export class BookServiceService {
 
   getBooks() {
     return this.http.get<Book>(this.URL_API + this.routeBook, {});
+  }
+
+  getBookDetail(id: string) {
+    const param = new HttpParams().set('id', id);
+    console.log(id);
+    return this.http.get<any>(`${this.URL_API}${this.routeBook}/${id}`);
   }
 }
