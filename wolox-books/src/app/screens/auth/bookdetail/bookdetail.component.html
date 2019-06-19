@@ -1,9 +1,9 @@
 <div class="container-detail">
     <img class="book-image" *ngIf="book" [src]="book.image_url" />
   <div class="book-desc" *ngIf="book">
-    <h1 class="title">{{book.title}}</h1>
-    <h3 class="subtitle">{{book.author}}</h3>
-    <h3 class="subtitle">{{book.publisher}}</h3>
-    <h3 class="subtitle">{{book.year}}</h3>
+    <h1 class="title">{{book.title}} <span class="book-data">{{book.genre}}</span></h1>
+    <h3 class="subtitle">Book author: <span class="book-data">{{book.author}}</span></h3>
+    <h3 class="subtitle">Publisher: <span class="book-data">{{book.publisher}}</span></h3>
+    <h3 class="subtitle">Year: <span class="book-data">{{book.year}}</span></h3>
   </div>
 </div>
