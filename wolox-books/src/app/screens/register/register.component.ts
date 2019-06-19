@@ -38,7 +38,6 @@ export class RegisterComponent implements OnInit {
       locale : this.locale,
       }
     };
-    console.log(JSON.stringify(user));
     this.userService.createUser(user)
     .subscribe(result =>
       console.log('sucess'),
