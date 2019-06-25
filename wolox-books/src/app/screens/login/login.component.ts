@@ -35,9 +35,8 @@ export class LoginComponent implements OnInit {
         password : post.password
       }
     };
-    console.log(JSON.stringify(session));
     this.userservice.login(session)
-    .subscribe(result => 
+    .subscribe(result =>
       console.log(result.access_token),
       error => console.log('error', error));
   }
