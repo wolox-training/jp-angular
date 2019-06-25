@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../models/book.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookServiceService {
-  readonly URL_API = 'https://wbooks-api-stage.herokuapp.com/api/v1/';
-  routeBook = 'books';
   constructor(private http: HttpClient) { }
 
   getBooks() {
-    return this.http.get<Book>(this.URL_API + this.routeBook, {});
+    return this.http.get<Book>(environment.URL_BOOK_SERVICE, {});
   }
 }
