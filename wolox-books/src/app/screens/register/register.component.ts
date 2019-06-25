@@ -12,7 +12,7 @@ import { from } from 'rxjs';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  imagenLogo: any = '../../../assets/wolox_logo.svg';
+  imageLogo: any = '../../../assets/wolox_logo.svg';
   nForm: FormGroup;
   post: any;
   locale = 'en';
