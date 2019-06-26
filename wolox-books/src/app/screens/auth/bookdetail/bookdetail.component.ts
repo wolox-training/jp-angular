@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookServiceService } from 'src/app/services/book-service.service';
 import { ActivatedRoute} from '@angular/router';
 import { Book } from 'src/app/models/book.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bookdetail',
@@ -10,17 +11,13 @@ import { Book } from 'src/app/models/book.model';
 })
 export class BookdetailComponent implements OnInit {
 
-  book: Book;
-  constructor(private bookService: BookServiceService, 
+  book: Observable<Book>;
+  constructor(private bookService: BookServiceService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id: string = this.route.snapshot.params.id;
-    this.bookService.getBookDetail(id)
-    .subscribe(result => {
-      console.log(result);
-      this.book = result;
-    });
+    this.book = this.bookService.getBookDetail(id).pipe();
 
   }
 }

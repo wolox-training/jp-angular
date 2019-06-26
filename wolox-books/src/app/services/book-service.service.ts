@@ -15,8 +15,6 @@ export class BookServiceService {
   }
 
   getBookDetail(id: string) {
-    const param = new HttpParams().set('id', id);
-    console.log(id);
-    return this.http.get<any>(`${this.URL_API}${this.routeBook}/${id}`);
+    return this.http.get<Book>(`${this.URL_API}${this.routeBook}/${id}`);
   }
 }
