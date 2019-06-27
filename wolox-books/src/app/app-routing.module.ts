@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './screens/login/login.component';
+import { LoginComponent } from '../app/screens/login/login.component';
 import { RegisterComponent } from './screens/register/register.component';
+import { AuthComponent } from './screens/auth/auth.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path : 'sign-up',
     component : RegisterComponent
+  },
+  {
+    path : 'auth',
+    component : AuthComponent
   }
 ];
 

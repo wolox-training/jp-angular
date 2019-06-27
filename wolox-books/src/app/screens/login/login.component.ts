@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ISession } from 'src/app/models/session.model';
 import { UserServiceService } from 'src/app/services/user-service.service';
-
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +11,14 @@ import { UserServiceService } from 'src/app/services/user-service.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  imagenLogo: any = '../../../assets/wolox_logo.svg';
+  imageLogo: any = '../../../assets/wolox_logo.svg';
   lForm : FormGroup;
   post : any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private userservice: UserServiceService
+    private userservice: UserServiceService,
+    private authLocalSorage: LocalStorageService
   ) {
     this.lForm = fb.group({
       email: [null, Validators.required],
@@ -40,5 +41,4 @@ export class LoginComponent implements OnInit {
       console.log(result.access_token),
       error => console.log('error', error));
   }
-
 }
