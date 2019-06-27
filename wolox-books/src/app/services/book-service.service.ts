@@ -6,10 +6,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class BookServiceService {
+export class BookService {
+  private bookUrl = 'books';
   constructor(private http: HttpClient) { }
 
   getBooks() {
-    return this.http.get<Book>(environment.URL_BOOK_SERVICE, {});
+    return this.http.get<Book>(`${environment.URL_API}${this.bookUrl}`, {});
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookServiceService } from 'src/app/services/book-service.service';
+import { BookService } from 'src/app/services/book-service.service';
 import { Book } from 'src/app/models/book.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { Book } from 'src/app/models/book.model';
 })
 export class BooklistComponent implements OnInit {
   books: Book;
-  constructor(private bookService: BookServiceService) { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
     this.bookService.getBooks()
