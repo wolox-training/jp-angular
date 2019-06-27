@@ -11,7 +11,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  imagenLogo: any = '../../../assets/wolox_logo.svg';
+  imageLogo: any = '../../../assets/wolox_logo.svg';
   lForm : FormGroup;
   post : any;
   constructor(
@@ -36,14 +36,11 @@ export class LoginComponent implements OnInit {
         password : post.password
       }
     };
-    console.log(JSON.stringify(session));
     this.userservice.login(session)
     .subscribe(result => {
-      console.log(result.access_token);
       this.authLocalSorage.setValue('token', result.access_token);
       this.router.navigateByUrl('books');
     },
       error => console.log('error', error));
   }
-  
 }

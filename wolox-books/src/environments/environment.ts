@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_API: 'https://wbooks-api-stage.herokuapp.com/api/v1/'
+  URL_API : 'https://wbooks-api-stage.herokuapp.com/api/v1/'
 };
 
 /*

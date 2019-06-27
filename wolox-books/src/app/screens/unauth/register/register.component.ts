@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {IUser} from '../../../models/user';
+import { IUser } from 'src/app/models/user';
 import { UserServiceService } from 'src/app/services/user-service.service';
+
 
 
 @Component({
@@ -11,10 +12,9 @@ import { UserServiceService } from 'src/app/services/user-service.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  imagenLogo: any = '../../../assets/wolox_logo.svg';
+  imageLogo: any = '../../../assets/wolox_logo.svg';
   nForm: FormGroup;
-  post: any;
-  locale = 'en';
+  locale: string = 'en';
 
   constructor(fb: FormBuilder, 
     private userService: UserServiceService,
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  goLogin (){
+  goLogin() {
     this.router.navigateByUrl('/login');
   }
 
@@ -45,14 +45,12 @@ export class RegisterComponent implements OnInit {
       email : post.email,
       password : post.password,
       password_confirmation : post.password,
-      locale : this.locale
+      locale : this.locale,
       }
     };
-    console.log(JSON.stringify(user));
     this.userService.createUser(user)
     .subscribe(result =>
-      console.log('sucess')
-      ,
+      console.log('sucess'),
     error => console.log('error', error));
     this.goLogin();
   }

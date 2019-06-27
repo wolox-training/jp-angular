@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  imagenLogo: any = '../../../assets/wolox_logo.svg';
+  imageLogo: any = '../../../assets/wolox_logo.svg';
   constructor(private authLocalSorage: LocalStorageService, private router: Router) { }
 
   ngOnInit() {}

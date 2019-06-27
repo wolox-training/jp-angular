@@ -9,14 +9,14 @@ import { UnauthGuardGuard } from './guard/unauth-guard.guard';
 
 const routes: Routes = [
   {
-    path : '',
+    path : 'login',
     component : LoginComponent,
     canActivate : [UnauthGuardGuard]
   },
   {
-    path : 'login',
-    component : LoginComponent,
-    canActivate : [UnauthGuardGuard]
+    path : '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path : 'sign-up',
