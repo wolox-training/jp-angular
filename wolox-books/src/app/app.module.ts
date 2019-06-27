@@ -11,6 +11,7 @@ import { LocalStorageService } from './services/local-storage.service';
 import { UnauthComponent } from './screens/unauth/unauth.component';
 import { BooklistComponent } from './screens/auth/booklist/booklist.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { BookdetailComponent } from './screens/auth/bookdetail/bookdetail.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     LoginComponent,
     AuthComponent,
     UnauthComponent,
-    BooklistComponent
+    BooklistComponent,
+    BookdetailComponent
   ],
   imports: [
     BrowserModule,
