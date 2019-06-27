@@ -1,25 +1,37 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from '../app/screens/login/login.component';
-import { RegisterComponent } from './screens/register/register.component';
+import { LoginComponent } from './screens/unauth/login/login.component';
+import { RegisterComponent } from './screens/unauth/register/register.component';
 import { AuthComponent } from './screens/auth/auth.component';
+import { BooklistComponent } from './auth/booklist/booklist.component';
+import { AuthGuardGuard } from './guard/auth-guard.guard';
+import { UnauthGuardGuard } from './guard/unauth-guard.guard';
 
 const routes: Routes = [
   {
-    path : '',
-    component : LoginComponent
+    path : 'login',
+    component : LoginComponent,
+    canActivate : [UnauthGuardGuard]
   },
   {
-    path : 'login',
-    component : LoginComponent
+    path : '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path : 'sign-up',
-    component : RegisterComponent
+    component : RegisterComponent,
+    canActivate : [UnauthGuardGuard]
   },
   {
-    path : 'auth',
-    component : AuthComponent
+    path : 'books',
+    component : AuthComponent,
+    canActivate : [AuthGuardGuard],
+    children: [{
+      path : '',
+      component : BooklistComponent
+    }
+    ]
   }
 ];
 

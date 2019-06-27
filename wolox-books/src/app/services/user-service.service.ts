@@ -5,6 +5,7 @@ import { IUser } from '../models/user';
 import { environment } from 'src/environments/environment';
 import { IRenew } from '../models/renew.model';
 import { ISession } from '../models/session.model';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ import { ISession } from '../models/session.model';
 export class UserServiceService {
   routeUser = 'users/';
   routeLogin = 'sessions';
-  constructor(private http: HttpClient) {
+  response: Observable<any>;
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
 
   }
 
@@ -22,5 +24,12 @@ export class UserServiceService {
 
   login(session: ISession) {
     return this.http.post<IRenew>(`${environment.URL_API}${this.routeUser}${this.routeLogin}`, session);
+  }
+
+  getToken() {
+    return this.localStorageService.getValue('token');
+  }
+  isLogged(): boolean {
+    return !!this.getToken();
   }
 }
