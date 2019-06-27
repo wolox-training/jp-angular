@@ -11,13 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class BookdetailComponent implements OnInit {
 
-  book: Observable<Book>;
+  book$: Observable<Book>;
   constructor(private bookService: BookServiceService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id: string = this.route.snapshot.params.id;
-    this.book = this.bookService.getBookDetail(id).pipe();
+    this.book$ = this.bookService.getBookDetail(id);
 
   }
 }
